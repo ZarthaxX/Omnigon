@@ -78,4 +78,4 @@ BOARD_HEIGHT_OFFSET = 20
 NORMAL_FPS = 60
 BOT_FPS = 1
 
-TIME_LIMIT = 1.0 #time limit for bots,in seconds
+TIME_LIMIT = 10.5 #time limit for bots,in seconds

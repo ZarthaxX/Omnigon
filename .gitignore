@@ -28,3 +28,6 @@ Bots/StarterKit/.vs/StarterKit/v15/.suo
 Interface/.vs/Interface/v15/.suo
 *.pyc
 *.pyproj
+Bots/Advanced/MCTSGon/.vs/MCTSGon/v15/.suo
+*.opendb
+TrainingArena/Simulator/.vs/Simulator/v15/.suo

@@ -120,6 +120,9 @@ class GraphicalBoard:
         
         self.FPS = BOT_FPS
 
+        if show == 1:
+            self.draw(player_turn)
+
         selected_token = copy.copy(fromP)
         available_moves = self.logical_board.valid_moves(selected_token)
         if show == 1:

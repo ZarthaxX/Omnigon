@@ -20,6 +20,7 @@ class PlayerCommunicator:
         self.t.start()
 
     def send(self, msg):
+        print(msg)
         self.player_process.stdin.write(bytes(msg + "\n", 'UTF-8'))
         self.player_process.stdin.flush()
 

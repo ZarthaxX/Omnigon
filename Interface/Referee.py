@@ -119,6 +119,9 @@ class Referee:
                 wins_player2+=1
                 print(self.player2.id + " player won!")
         
+            print("Wins for " + GOLD + " player: " + str(wins_player1))
+            print("Wins for " + WHITE + " player: " + str(wins_player2))
+
             if invalid_action == True:
                 if last_winner == DRAW:
                     print("Max amount of turns reached, it is a draw!")

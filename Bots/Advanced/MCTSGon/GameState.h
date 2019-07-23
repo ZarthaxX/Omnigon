@@ -6,7 +6,7 @@
 #include <ostream>
 #include <string>
 
-#include "Constants.h"
+#include "MCTSGon_constants.h"
 #include "Point.h"
 
 namespace MCTSGon {
@@ -98,7 +98,8 @@ namespace MCTSGon {
 		Player Get_player_turn() const;
 		bool Is_in_progress() const;
 		int8_t get_winner() const;
-		
+		std::pair<uint8_t, bool> Get_threats(Player player_moving) const;
+
 		void external_do_action(std::tuple<int,int,int,int,int> action);
 		void external_start(bool first_player);
 		void external_init();

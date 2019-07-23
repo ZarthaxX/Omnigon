@@ -250,6 +250,43 @@ namespace MCTSGon {
 		return winner;
 	}
 
+	std::pair<uint8_t, bool> GameState::Get_threats(Player player_moving) const
+	{
+		uint8_t threats = 0;
+		bool helios_threat = false;
+
+		for (const Token& t : tokens) {
+			if (t.player == player_moving && t.alive == true) {
+				Point initial(t.x, t.y);
+				for (int i = 0; i < 6; i++) {
+					bool has_arrow = token_attacks[t.type][t.orientation][i];
+					Point direction = directions[i];
+
+					if (has_arrow) {
+						Point position = initial;
+						position.x += direction.x;
+						position.y += direction.y;
+
+						if (valid_cell(position)) {
+							if (grid[position.y][position.x] != -1) {
+								Token token = tokens[grid[position.y][position.x]];
+
+								if (token.player != player_moving && token_defenses[token.type][token.orientation][(i + 3) % 6] == false) {
+									threats++;
+
+									if (token.type == HELIOS)
+										helios_threat = true;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		return std::make_pair(threats, helios_threat);
+	}
+
 	bool GameState::valid_cell(const Point & p) const
 	{
 		if (p.y <= 3)

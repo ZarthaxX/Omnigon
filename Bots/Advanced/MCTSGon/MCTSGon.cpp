@@ -65,7 +65,7 @@ int main()
 
 				gamestate.Add_token(_type, x, y, orientation, player);
 			}
-
+			std::cerr << gamestate << std::endl;
 			Action best_action = agent.find_best_action(gamestate, my_id, enemy);
 
 			std::cout <<
